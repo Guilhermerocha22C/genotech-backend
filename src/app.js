@@ -125,6 +125,8 @@ const adminEmails = [
     'gui23rocha@gmail.com',
     'Joaopedrosousa2909@gmail.com',
     'fabriciofrei01@gmail.com',
+    'matheusteteuabreu@gmail.com',
+    'lucassilva.lima@eaportal.org',
     'anderson2007lvs123@gmail.com'
 ];
 
