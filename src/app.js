@@ -317,7 +317,7 @@ app.delete('/api/admin/users/:id', (req, res) => {
 // Função para enviar e-mail de recuperação
 async function enviarEmailRecuperacao(email, token) {
     const baseUrl = process.env.FRONTEND_URL || 'https://genotech-backend.vercel.app';
-    const resetUrl = `${baseUrl}/Frontend/pages/redefinir-senha/redefinir-senha.html?token=${token}`;
+    const resetUrl = `${baseUrl}/pages/redefinir-senha/redefinir-senha.html?token=${token}`;
 
     const msg = {
         to: email,
