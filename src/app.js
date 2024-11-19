@@ -83,7 +83,7 @@ app.get('/api/user/:id', (req, res) => {
         }
         const user = results[0];
         user.profileImageUrl = user.profile_image_url 
-            ? `http://localhost:3001${user.profile_image_url}`
+            ? `https://genotech-backend.vercel.app${user.profile_image_url}`
             : null;
             user.isAdmin = adminEmails.includes(user.email); 
         res.json({ success: true, user });
@@ -165,7 +165,7 @@ app.post('/api/login', async (req, res) => {
                     delete user.senha;
                     // Sempre incluir a URL completa da imagem de perfil
                     user.profileImageUrl = user.profile_image_url 
-                        ? `http://localhost:3001${user.profile_image_url}`
+                        ? `https://genotech-backend.vercel.app${user.profile_image_url}`
                         : null;
                     console.log('Dados do usuário enviados:', user);
                     res.status(200).json({ 
@@ -312,7 +312,7 @@ app.delete('/api/admin/users/:id', (req, res) => {
 
 // Função para enviar e-mail de recuperação
 async function enviarEmailRecuperacao(email, token) {
-    const baseUrl = process.env.FRONTEND_URL || 'http://127.0.0.1:5501';
+    const baseUrl = process.env.FRONTEND_URL || 'https://genotech-backend.vercel.app';
     const resetUrl = `${baseUrl}/Frontend/pages/redefinir-senha/redefinir-senha.html?token=${token}`;
 
     const msg = {
