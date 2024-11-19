@@ -14,7 +14,7 @@ require('dotenv').config();
 const app = express();
 
 app.use(cors({
-    origin: ['https://genotech-frontend.vercel.app', 'http://localhost:5500'],
+    origin: ['https://genotech-frontend.vercel.app'],
     credentials: true
   }));
 
