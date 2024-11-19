@@ -14,8 +14,9 @@ require('dotenv').config();
 const app = express();
 
 app.use(cors({
-    origin: ['https://genotech-frontend.vercel.app'],
-    credentials: true
+    origin: '*', // Permite todas as origens
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Métodos permitidos
+    allowedHeaders: ['Content-Type', 'Authorization'] // Headers permitidos
   }));
 
 const uploadsPath = path.join(__dirname, 'uploads');
