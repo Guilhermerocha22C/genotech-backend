@@ -43,7 +43,7 @@ Este é o repositório do backend para o projeto GenoTech, uma plataforma educac
 
 ## Estrutura do Projeto
 
-- `server.js`: Arquivo principal do servidor
+- `app.js`: Arquivo principal do servidor
 - `/uploads`: Diretório para armazenamento de imagens de perfil
 - Rotas principais:
   - `/api/login`: Login de usuário
@@ -58,7 +58,7 @@ Este é o repositório do backend para o projeto GenoTech, uma plataforma educac
 ## Segurança
 
 - Uso de reCAPTCHA para proteção contra bots no login
-- Armazenamento seguro de senhas (considere implementar hashing)
+- Armazenamento seguro de senhas 
 - Tokens para recuperação de senha
 
 ## Deploy
