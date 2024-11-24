@@ -247,6 +247,9 @@ app.put('/api/user/update/:id', upload.single('profileImage'), (req, res) => {
     const userId = req.params.id;
     const { nome } = req.body;
 
+    console.log('Arquivo recebido:', req.file);
+    console.log('Nome recebido:', nome);
+
     if (!nome) {
         return res.status(400).json({ success: false, message: 'Nome não fornecido' });
     }
