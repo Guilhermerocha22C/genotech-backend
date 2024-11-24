@@ -473,6 +473,31 @@ app.get('/api/ranking', (req, res) => {
     });
 });
 
+app.post('/api/chat', async (req, res) => {
+    const API_KEY = process.env.GEMINI_API_KEY;
+    const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
+    const { message } = req.body;
+
+    try {
+        const response = await axios.post(`${API_URL}?key=${API_KEY}`, {
+            contents: [{
+                parts: [{
+                    text: `Você é um assistente especializado em genética e biotecnologia para o site GenoTech. Responda à seguinte pergunta: ${message}`
+                }]
+            }]
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+
+        res.json(response.data);
+    } catch (error) {
+        console.error('Erro ao chamar API Gemini:', error);
+        res.status(500).json({ error: 'Erro ao processar solicitação' });
+    }
+});
+
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../../Frontend/index.html'));
 });
